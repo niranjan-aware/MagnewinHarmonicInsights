@@ -28,7 +28,7 @@ export default function About() {
       
       <div className="guide-profiles w-full">
       <div className="  flex items-center ">
-          <h1 className="text-3xl shadow-2xl ml-10 font-bold text-slate-600">Guidance</h1>
+          <h1 className="text-3xl shadow-2xl ml-10 font-bold text-slate-600">Expertise</h1>
         </div>
         <GuideProfiles />
       </div>

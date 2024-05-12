@@ -1,19 +1,19 @@
 import React from 'react'
-import aj from "../../assets/aj.jpeg";
-import "./aj.css";
+import as from "../../assets/aalesh.jpg";
+import "./Aalesh.css";
 
-export default function Aj() {
+export default function Aalesh() {
   return (
-    <div className="">
+    <div className="mt-10 ml-8">
   
-   <div className="aj">
+   <div className="Aalesh">
      <div className="profile-card ">
        <div className="profile-card-inner">
-         <div className="aj-profile-card-front">
+         <div className="alesh-profile-card-front">
          <div className="title ml-5  w-full h-full relative">
-            <div className="absolute  -bottom-4">
+            <div className="absolute  -bottom-6">
             <h3 className="text-2xl  font-bold text-slate-900 ">
-               Mr.Akhilesh Jadhav
+               Mr.Aalesh shende
              </h3>
              <span className="job text-base font-semibold text-slate-900">
                Student at Walchand College of Engineering, Sangli
@@ -22,9 +22,9 @@ export default function Aj() {
            </div>
          </div>
          <div className="profile-card-back">
-           <img src={aj} alt="profile-photo" />
+           <img src={as} alt="profile-photo" />
            <h3 className="text-2xl font-bold text-slate-700 ">
-           Mr.Akhilesh Jadhav
+           Mr.Alesh Shende
            </h3>
            <span className="job text-base font-semibold text-slate-600">
            Student at Walchand College of Engineering, Sangli

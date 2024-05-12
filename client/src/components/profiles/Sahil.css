@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popins';
+}
+
+.profile-card{
+    width: 350px;
+    height: 380px;
+    perspective: 900px;
+}
+
+.profile-card:hover .profile-card-inner{
+    transform: rotateY(180deg);
+}
+
+.profile-card-inner{
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+.sahil-profile-card-front,
+.profile-card-back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sahil-profile-card-front{
+    background-image: url('../../assets/sahil.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+.sahil-profile-card-front, .title{
+    position: absolute;
+    up: 50px;
+    left: 10px;
+}
+
+
+
+
+
+.profile-card-back{
+    background: #d1dbf6;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.profile-card-back img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

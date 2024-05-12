@@ -12,7 +12,7 @@ export default function VPprofile() {
             <div className="vp-profile-card-front  ">
               <div className="title  ">
                 <h3 className="text-2xl  font-bold text-slate-900">
-                  Dr.V P Mohale
+                  Dr.Vijay Mohale
                 </h3>
                 <h4 className="job text-base font-semibold text-slate-600">
                   Ph.D IIT Roorkee
@@ -26,7 +26,7 @@ export default function VPprofile() {
             <div className="profile-card-back">
               <img src={vpm} alt="profile-photo" />
               <h3 className="text-2xl font-bold text-slate-700 ">
-                Dr.V P Mohale
+                Dr.Vijay Mohale
               </h3>
               <span className="job text-base font-semibold text-slate-600">
                   Assistant Professor Department of Electrical Engineering

@@ -13,7 +13,7 @@ export default function Mukund() {
                 <h3 className="text-2xl  font-bold text-slate-900">
                   Mr. Mukund Chippalkatti
                 </h3>
-                <h4 className="job text-base font-semibold text-slate-300">
+                <h4 className="job text-base font-semibold text-slate-900">
                   Executive Director, Magnewin Energy Pvt Ltd. Sangli
                 </h4>
               </div>

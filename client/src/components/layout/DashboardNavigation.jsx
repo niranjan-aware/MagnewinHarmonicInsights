@@ -58,12 +58,15 @@ export default function DashboardNavigation() {
         </div>
         <div className="absolute left-40">
           <button
-            className="flex items-center px-4 py-2 bg-fuchsia-300 rounded-lg text-white font-semibold text-xl hover:shadow-md hover:bg-white hover:text-fuchsia-300 transition ease-in-out duration-300 "
+            className="flex items-center ml-28 px-4 py-2 bg-fuchsia-300 rounded-lg text-white font-semibold text-xl hover:shadow-md hover:bg-white hover:text-fuchsia-300 transition ease-in-out duration-300 "
             onClick={handleLogin}
           >
             Explore <FaArrowCircleRight className="ml-2" />
           </button>
         </div>
+      </div>
+      <div className="absolute bottom-28 ml-20"> 
+      <p className="text-sm font-semibold text-slate-500">*This portal was designed by the Electrical Department of Walchand College of Engineering, Sangli, <br /> <span className="ml-2">   </span> in collaboration with Magnewin Industries</p>
       </div>
     </div>
   );

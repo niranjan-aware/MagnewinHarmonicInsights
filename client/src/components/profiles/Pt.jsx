@@ -15,7 +15,7 @@ export default function Pt() {
             <h3 className="text-2xl  font-bold text-slate-900 ">
                Mr.Prathamesh Shinde
              </h3>
-             <span className="job text-base font-semibold text-slate-300">
+             <span className="job text-base font-semibold text-slate-900">
                Student at Walchand College of Engineering, Sangli
              </span>
             </div>

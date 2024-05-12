@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import THDBarGraph from '../components/layout/THDBarGraph'
-import { useSelector, useDispatch } from 'react-redux'
-import { setProjectId  } from '../redux/slice/projectIdSlice';
+import THDBarGraph from "../components/layout/THDBarGraph";
+import { useSelector, useDispatch } from "react-redux";
+import { setProjectId } from "../redux/slice/projectIdSlice";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import './Result.css'
 
 export default function Results() {
   const navigate = useNavigate();
@@ -186,7 +187,7 @@ export default function Results() {
 
   const percentageFilterCurrentRMS = (filterCurrentRMS / nominalCurrent) * 100;
 
-    // console.log(filterCurrentRMS,nominalCurrent,percentageFilterCurrentRMS);
+  // console.log(filterCurrentRMS,nominalCurrent,percentageFilterCurrentRMS);
 
   let beforCompensationTHD = 0;
 
@@ -210,66 +211,86 @@ export default function Results() {
 
   // console.log("after-final",afterCompensationTHD);
   const calculatedData = [
-    { name: "Capacitance Reactance", value: capReactance },
-    { name: "Capacitance", value: capacitance },
-    { name: "Inductance", value: inductance },
-    { name: "Effective Reactance", value: effReactance },
-    { name: "Root 3", value: root3 },
-    { name: "Phase Voltage", value: phaseVoltage / 1000 },
-    { name: "Fundamental Current", value: fundamentalCurrent },
-    { name: "Nominal Current", value: nominalCurrent },
-    { name: "Fundamental Voltage", value: fundmentalVoltage },
-    { name: "Filter Capacitor Rating", value: filterCapRating },
-    { name: "Filter Load Reactance", value: filterLoadReactance },
-    { name: "Filter Load Inductance", value: filterLoadInductance },
+    { name: "Fundamental Filter Current (in Amperes)", value: fundamentalCurrent },
+    { name: "Capacitance Reactance (in Ohms)", value: capReactance },
+    { name: "Capacitance (in microFarad)", value: capacitance },
+    { name: "Inductance (in miliHenry)", value: inductance },
+    { name: "Effective Reactance (in Ohms)", value: effReactance },
+    { name: "Nominal Current(in Amperes)", value: nominalCurrent },
+    { name: "Fundamental Voltage of Capacitor Bank (in kV)", value: fundmentalVoltage },
+    { name: "Filter Capacitor Rating (in kVAr)", value: filterCapRating },
+    { name: "Source Reactance (in Ohms)", value: filterLoadReactance },
+    { name: "Source Inductance (in miliHenry)", value: filterLoadInductance },
     { name: "Resonance Frequency", value: resonanceFrequecy },
     { name: "Before Compensation THD", value: beforCompensationTHD },
     { name: "After Compensation THD", value: afterCompensationTHD },
-    { name: "Percentage Filter Capacitor Voltage RMS", value: percentageFilterCapacitorVoltageRMS },
-    { name: "Percentage Filter Current RMS", value: percentageFilterCurrentRMS },
+    {
+      name: "Percentage Filter Capacitor Voltage RMS",
+      value: percentageFilterCapacitorVoltageRMS,
+    },
+    {
+      name: "Percentage Filter Current RMS",
+      value: percentageFilterCurrentRMS,
+    },
   ];
-  const newData=[
-    {_id:"Before Compensation THD",count:beforCompensationTHD},
-    {_id:"After Compensation THD",count:afterCompensationTHD}
-  ]
+  const newData = [
+    { _id: "Before Compensation THD", count: beforCompensationTHD },
+    { _id: "After Compensation THD", count: afterCompensationTHD },
+  ];
   return (
     <div className="flex flex-col justify-center items-center space-y-3 bg-slate-200 relative">
-    <div className="flex flex-row space-x-2 mt-5  top-1 right-5 fixed z-50">
-    <button onClick={fetchData} className="px-4 py-2 bg-fuchsia-300 rounded-lg text-white font-semibold text-xl hover:shadow-md hover:bg-white hover:text-fuchsia-300 transition ease-in-out duration-300 ">
-      Refresh
-    </button>
-    <button className="flex items-center bg-fuchsia-300  py-2 rounded-xl px-4  font-semibold text-lg text-white hover:text-fuchsia-300 hover:bg-white transition ease-in-out duration-300" onClick={handleBack}>
-          Back
-          <span className="ml-2"><RiArrowGoBackFill /></span>
+      <div className="flex flex-row space-x-2 mt-5  top-1 right-5 fixed z-50">
+        <button
+          onClick={fetchData}
+          className="px-4 py-2 bg-fuchsia-300 rounded-lg text-white font-semibold text-xl hover:shadow-md hover:bg-white hover:text-fuchsia-300 transition ease-in-out duration-300 "
+        >
+          Refresh
         </button>
-    </div>
-    <div className="w-full ">
-     <div className="p-5 bg-slate-200 rounded-xl mt-5 ml-10 fixed z-50 shadow-2xl">
-     <h2 className="text-xl text-slate-500  font-bold  p-auto">Calculated Data</h2>
-     </div>
-      <div className="overflow-x-auto w-2/3  -mt-10 ml-96 mb-20">
-        <table className="pagination-table">
-          <thead>
-            <tr className="bg-blue-500 text-white">
-              <th className="border border-blue-500 px-4 py-2">Name</th>
-              <th className="border border-blue-500 px-4 py-2">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {calculatedData.map((item, index) => (
-              <tr key={index} className={index % 2 === 0 ? 'bg-gray-200' : 'bg-gray-100'}>
-                <td className="border border-blue-500 px-4 py-2">{item.name}</td>
-                <td className="border border-blue-500 px-4 py-2">{item.value}</td>
+        <button
+          className="flex items-center bg-fuchsia-300  py-2 rounded-xl px-4  font-semibold text-lg text-white hover:text-fuchsia-300 hover:bg-white transition ease-in-out duration-300"
+          onClick={handleBack}
+        >
+          Back
+          <span className="ml-2">
+            <RiArrowGoBackFill />
+          </span>
+        </button>
+      </div>
+      <div className="w-full ">
+        <div className="p-5 bg-slate-200 rounded-xl mt-5 ml-10 fixed z-50 shadow-2xl">
+          <h2 className="text-xl text-slate-500  font-bold  p-auto">
+            Calculated Data
+          </h2>
+        </div>
+        <div className="overflow-x-auto w-2/3  -mt-10 ml-96 mb-20">
+          <table className="pagination-table">
+            <thead>
+              <tr className="bg-blue-500 text-white">
+                <th className="border border-blue-500 px-4 py-2">Name</th>
+                <th className="border border-blue-500 px-4 py-2">Value</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {calculatedData.map((item, index) => (
+                <tr
+                  key={index}
+                  className={index % 2 === 0 ? "bg-gray-200" : "bg-gray-100"}
+                >
+                  <td className="border border-blue-500 px-4 py-2">
+                    {item.name}
+                  </td>
+                  <td className="border border-blue-500 px-4 py-2">
+                  {parseFloat(item.value.toFixed(2))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="analysis-graphs bg-slate-100 w-3/4 flex justify-center items-center p-20 shadow-2xl rounded-xl">
+        {data && <THDBarGraph heading="THD Analysis" data={newData} />}
       </div>
     </div>
-      <div className="analysis-graphs bg-slate-100 w-3/4 flex justify-center items-center p-20 shadow-2xl rounded-xl">
-          {data && <THDBarGraph heading="THD Analysis" data={newData} />}
-        </div>
-  </div>
-  
   );
 }

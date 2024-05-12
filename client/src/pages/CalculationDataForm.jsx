@@ -336,7 +336,7 @@ export default function CalculationDataForm() {
                           type="text"
                           required={true}
                           name="harmonicorder"
-                          placeholder="Enter"
+                          placeholder="harmonicorder"
                           onChange={(e) => handleInputChange(e, i)}
                           className="bg-gray-50 border mr-2 mb-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         />
@@ -346,7 +346,7 @@ export default function CalculationDataForm() {
                           type="text"
                           name="harmonicpercentage"
                           required={true}
-                          placeholder="Enter"
+                          placeholder="harmonicpercentage"
                           onChange={(e) => handleInputChange(e, i)}
                           className="bg-gray-50 border mr-2 mb-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         />
